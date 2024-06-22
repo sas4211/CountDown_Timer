@@ -14,7 +14,7 @@ function startcounter(val) {
     /////console.log("Hello")}, 1000) /// milliseconds
     let intialTime = new Date();
     ////console.log(intialTime);
-    let intervalTime = new Date().setSeconds(intialTime.getSeconds() + val);
+    let intervalTime = new Date().setSeconds(intialTime.getSeconds() + val + 2);
     let intervalTimeFormate = new Date(intervalTime);
     console.log(intervalTimeFormate);
     setInterval(() => {
@@ -27,7 +27,8 @@ function startcounter(val) {
         }
         let minute = Math.floor(timediff / 60);
         let seconds = Math.floor(timediff % 60);
-        console.log(chalk.blue(`${minute} minutes and ${seconds} seconds remaining`));
+        /// console.log(chalk.blue(`${minute} minutes and ${seconds} seconds remaining`)
+        console.log(chalk.blue(`Time remaining: ${minute.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`));
     }, 1000);
 }
 startcounter(time);
